@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{multimedia}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{amsthm}
+
+\title{Specyfikacja wymagań}
+\date{\today}
+\author{A. Dudek oraz P. Kowalczyk}
+
+\renewcommand*{\tablename}{\textit{Tabela}}
+\renewcommand{\thetable}{\textit{\arabic{figure}}}
+
+
+\begin{document}
+
+\begin{titlepage}
+	%TODO: jak widać
+	\vspace{2em}{\centering\large{Żadna pracownia xD}\par}
+
+	\vspace{2em}{\centering\large{Instytut Informatyki Uniwersytetu Wrocławskiego}\par}
+
+  \vspace{17em}{\centering\large{Agnieszka Dudek, Piotr Kowalczyk}\par}
+
+	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
+
+	\vspace{2em}{\centering\Large{Specyfikacja wymagań}\par}
+
+	\vspace{17em}{\centering\large{Wrocław, \today}\par}
+
+	\vspace{1em}{\centering\large{Wersja 0.1}\par}
+
+\end{titlepage}
+
+\addtocounter{page}{1}
+\newpage
+
+\begin{table}
+	\begin{center}
+		\caption{Historia zmian dokonywanych w dokumencie}
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			Data & Numer wersji & Opis & Autor \\
+		  \hline \hline
+      2018-11-26 & 0.1 & Utworzenie dokumentu & Piotr Kowalczyk \\
+      \hline
+    \end{tabular}
+	\end{center}
+\end{table}	
+
+\tableofcontents
+
+\newpage
+
+
+\section{Wprowadzenie}
+
+\subsection{Cel dokumentu}
+Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu Tablica efektów kształcenia. Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
+
+
+
+\section{Historyjki użytkownika}
+
+\subsection{Pierwsza historyjka}
+Jako student chcę sprawdzić, które efekty kształcenia już osiągnąłem, aby móc zaszpanować przed moimi ziomkami.
+
+\subsection{Druga historyjka} %TODO: napisać coś mądrego
+To samo, tylko chcę pokazać rodzicom, że dobrze się uczę.
+
+\subsection{Trzecia historyjka}
+Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu algorytmy i struktury danych w lutym, prosi zatem o przedłużenie sesji oraz korektę danych. Chcę, aby po zmianie oceny oraz efektów kształcenia w USOSie zauktualizowane zostały dane nt. efektów kształcenia w Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
+
+
+
+\section{Wymagania funkcjonalne}
+
+\subsection{Pokazanie tablicy efektów użytkownikowy Systemu Zapisów}
+Jest to kluczowa funkcja projektowanego systemu. Po zleceniu systemowi wyświetlenia tablicy efektów użytkownik powienien niezwłocznie zobaczyć:
+\begin{itemize}
+	\item listę osiągniętych efektów kształcenia,
+	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów.
+\end{itemize}
+
+
+\subsection{Importowanie danych z USOSa}
+Ręczne wpisywanie danych wszystkich studentów korzystających z Systemu Zapisów byłoby zaprzeczeniem wszystkiego, w co wierzymy. Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOSem.
+
+
+\subsection{Ręczna modyfikacja danych}
+Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając przedmiot po terminie bądź bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej). Zdarzają się także błędy nawet w najdoskonalszych systemach informatycznych, a USOSa trudno byłoby zaliczyć do tej grupy. Konieczna jest zatem możliwość ręcznej modyfikacji danych, które znajdują się w Systemie Zapisów i dotyczą efektów kształcenia.
+
+
+
+\section{Wymagania niefunkcjonalne}
+
+\subsection{Płynność działania} %TODO: jakaś wymierna miara?
+Przez większość czasu z Systemu Zapisów korzysta niewielka ilość studentów, jednak zmienia się to po otwarciu zapisów na dany semestr oraz w trakcie głosowania. W tych okresach Tablica efektów kształcenia będzie szczególnie często użytkowana.
+
+
+
+\end{document}
