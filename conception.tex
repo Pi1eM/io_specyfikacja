@@ -5,11 +5,12 @@
 \usepackage[T1]{fontenc}
 \usepackage{color}
 \usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{afterpage}
 
-\title{Specyfikacja wymagań}
-\date{\today}
-\author{A. Dudek oraz P. Kowalczyk}
-
+\renewcommand*{\figurename}{\textit{Rysunek}}
+\renewcommand{\thefigure}{\textit{\arabic{figure}}}
 \renewcommand*{\tablename}{\textit{Tabela}}
 \renewcommand{\thetable}{\textit{\arabic{figure}}}
 
@@ -26,7 +27,7 @@
 
 	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
 
-	\vspace{2em}{\centering\Large{Specyfikacja wymagań}\par}
+	\vspace{2em}{\centering\Large{Koncepcja wykonania systemu}\par}
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
@@ -37,7 +38,7 @@
 \addtocounter{page}{1}
 \newpage
 
-\begin{table}
+\begin{table}[h!]
 	\begin{center}
 		\caption{Historia zmian dokonywanych w dokumencie}
 		\begin{tabular}{|l|l|l|l|}
@@ -58,47 +59,108 @@
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
-Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu Tablica efektów kształcenia. Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
+Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu Tablica efektów kształcenia. Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
 
 
 
-\section{Historyjki użytkownika}
+\section{Scenariusze przypadków użycia} %TODO: jakoś mądrzej...?
+Odpowiadają one historyjkom użytkownika opisanym w dokumencie Specyfikacja wymagań.
 
-\subsection{Pierwsza historyjka}
-Jako student chcę sprawdzić, które efekty kształcenia już osiągnąłem, aby móc zaszpanować przed moimi ziomkami.
-
-\subsection{Druga historyjka} %TODO: napisać coś mądrego
-To samo, tylko chcę pokazać rodzicom, że dobrze się uczę.
-
-\subsection{Trzecia historyjka}
-Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu algorytmy i struktury danych w lutym, prosi zatem o przedłużenie sesji oraz korektę danych. Chcę, aby po zmianie oceny oraz efektów kształcenia w USOSie zauktualizowane zostały dane nt. efektów kształcenia w Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
-
-
-
-\section{Wymagania funkcjonalne}
-
-\subsection{Pokazanie tablicy efektów użytkownikowy Systemu Zapisów}
-Jest to kluczowa funkcja projektowanego systemu. Po zleceniu systemowi wyświetlenia tablicy efektów użytkownik powienien niezwłocznie zobaczyć:
+\subsection{Pierwszy scenariusz}
+Po zalogowaniu do Systemu Zapisów widoczny jest przycisk podpisany Tablica efektów (dalej zwany po prostu przyciskiem). Znajduje się on obok przycisków Przedmioty, Plan zajęć itp. Po kliknięciu w przycisk pojawia się ekran, na którym znajdują się:
 \begin{itemize}
-	\item listę osiągniętych efektów kształcenia,
-	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów.
+	\item lista efektów kształcenia czekających na zrealizowanie
+	\item lista zrealizowanych efektów kształcenia
 \end{itemize}
 
+\subsection{Drugi scenariusz}
+%TODO: poprawić (jw.), gdy zostanie napisana druga historyjka
 
-\subsection{Importowanie danych z USOSa}
-Ręczne wpisywanie danych wszystkich studentów korzystających z Systemu Zapisów byłoby zaprzeczeniem wszystkiego, w co wierzymy. Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOSem.
-
-
-\subsection{Ręczna modyfikacja danych}
-Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając przedmiot po terminie bądź bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej). Zdarzają się także błędy nawet w najdoskonalszych systemach informatycznych, a USOSa trudno byłoby zaliczyć do tej grupy. Konieczna jest zatem możliwość ręcznej modyfikacji danych, które znajdują się w Systemie Zapisów i dotyczą efektów kształcenia.
+\subsection{Trzeci scenariusz}
+Zmiana przedmiotu w USOSie powoduje, że w następnej migracji danych aktualizowane są dane w Systemie Zapisów dotyczące efektów kształcenia.
 
 
+%TODO: skontrolować strony
+\afterpage{\null\newpage}
+\newpage
 
-\section{Wymagania niefunkcjonalne}
+\section{Projekty ekranów dla przypadków użycia}
+Odpowiadają one scenariuszom opisanym w powyżej.
 
-\subsection{Płynność działania} %TODO: jakaś wymierna miara?
-Przez większość czasu z Systemu Zapisów korzysta niewielka ilość studentów, jednak zmienia się to po otwarciu zapisów na dany semestr oraz w trakcie głosowania. W tych okresach Tablica efektów kształcenia będzie szczególnie często użytkowana.
+\subsection{Pierwszy scenariusz}
+\begin{figure}[H]
+	\begin{center}
+		\caption{Projekt przycisku Efekty kształcenia}
+		\includegraphics[scale=0.5]{te.png}
+	\end{center}
+\end{figure}
 
+%TODO: grafika tabeli na stronie, najlepiej robiona w paincie
+
+\subsection{Drugi scenariusz}
+%TODO: poprawić (jw.), gdy zostanie napisana druga historyjka
+
+\subsection{Trzeci scenariusz}
+Nie wymaga projektów międzymordzia, %TODO: usunąć ten żart
+ponieważ całość już istnieje.
+
+
+
+\section{Punkt 3. w zadaniu}
+Nie wiem o co tu chodzi. %TODO: zrobić
+
+\subsection{Model konceptualny rzeczywistości, której dotyczy aplikacja, tzn. identyfikacja encji i powiązań oraz warunków dotyczących powiazań}
+??? %TODO: zrobić
+
+\subsection{Wymienienie oraz przedstawienie graficzne podstawowych elementów aplikacji oraz
+powiązań między nimi}
+% - sprzęt,
+% - oprogramowanie systemowe, bazy danych, narzędzia
+% programistyczne, oprogramowanie do automatycznego testowania.
+% - struktury logicznej oprogramowania obiektowego
+% ( podział kodu na główne komponenty np. klasy i powiązania
+% miedzy nimi)}
+%TODO: use paint
+
+\subsection{Omówienie interfejsów aplikacji z otoczeniem}
+Głównym interfejsem aplikacji jest strona Systemu Zapisów. Oprócz tego ważne jest powiązanie z USOSem. Jest także furtka, służąca do ręcznych poprawek w sytuacjach wyjątkowych (takich, które nie są skorelowane ze zmianami w USOSie).
+
+
+
+%TODO: skontrolować strony
+\afterpage{\null\newpage}
+\newpage
+
+\section{Schemat bazy danych}
+%TODO: wybrać
+%v1
+Baza danych składa się z jednej tablicy, w której kluczami są identyfikatory studentów, a efekty kształcenia kolejnymi polami typu boolean.
+%v2
+Baza danych składa się z tylu tablic, ile jest toków studiów na kierunku informatyka na naszej uczelni. Kluczami są identyfikatory studentów, a efekty kształcenia kolejnymi polami typu boolean (nie da się być jednocześnie na dwóch tokach studiów).
+
+Baza jest tworzona (za pierwszym razem) i aktualizowana podczas migracji danych z USOSa.
+
+
+
+\section{Zasady kodowania}
+%TODO: jak jest ok, to usuń ten komentarz
+Podczas kodowania będą obowiązywać zasady z Systemu Zapisów, a w przypadki tamże niezdefiniowane rozstrzygane będą zgodnie z normą wypracowaną przez Google\footnote{https://google.github.io/styleguide/jsguide.html}.
+
+
+
+\section{Ryzyko}
+
+\subsection{Identyfikacja ryzyka} %TODO: przepisać ładniej
+Nie musimy się bać, że nasze oprogramowanie przestanie być potrzebne. Nie musimy się bać, że stracimy odbiorców. Ale za to wykonanie projektu może się opóźnić i tego się głównie boimy.
+
+\subsection{Zasady zarządzania ryzykiem}
+%TODO: też nie wiem o co tu chodzi
+
+
+
+\section{Ocena zgodności wykonanych prac z planami}
+Nie ma co zepsuć, bo jak coś zmienimy to już będzie zupełnie inny projekt. Wygląd se można zmienić i tyle.
+%TODO: poprawić
 
 
 \end{document}
