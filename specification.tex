@@ -13,20 +13,17 @@
 \begin{document}
 
 \begin{titlepage}
-	%TODO: jak widać
-	\vspace{2em}{\centering\large{Żadna pracownia xD}\par}
-
 	\vspace{2em}{\centering\large{Instytut Informatyki Uniwersytetu Wrocławskiego}\par}
 
   \vspace{17em}{\centering\large{Agnieszka Dudek, Piotr Kowalczyk}\par}
 
-	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
+	\vspace{2em}{\centering\huge{Dokumentacja projektu \textit{Tablica efektów kształcenia}}\par}
 
-	\vspace{2em}{\centering\Large{Specyfikacja wymagań}\par}
+	\vspace{4em}{\centering\Large{Specyfikacja wymagań}\par}
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.1}\par}
+	\vspace{1em}{\centering\large{Wersja 0.2}\par}
 
 \end{titlepage}
 
@@ -39,9 +36,11 @@
 		\begin{tabular}{|l|l|l|l|}
 			\hline
 			Data & Numer wersji & Opis & Autor \\
-		  \hline \hline
-      2018-11-26 & 0.1 & Utworzenie dokumentu & Piotr Kowalczyk \\
-      \hline
+			\hline \hline
+			2018-11-26 & 0.1 & Utworzenie dokumentu & Piotr Kowalczyk \\
+			\hline 
+			2018-11-30 & 0.2 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline
     \end{tabular}
 	\end{center}
 \end{table}	
@@ -54,33 +53,36 @@
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
-Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu Tablica efektów kształcenia. Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
-
+Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu \textit{Tablica efektów kształcenia}. Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
 
 
 \section{Historyjki użytkownika}
-%TODO: zrobić to porządnie, nie tak jak teraz
-
 \subsection{Pierwsza historyjka}
-Jako student chcę sprawdzić, które efekty kształcenia już osiągnąłem, aby móc zaszpanować przed moimi ziomkami.
-
-\subsection{Druga historyjka} %TODO: napisać coś mądrego
-To samo, tylko chcę pokazać rodzicom, że dobrze się uczę.
-
+Jako student informatyki, który właśnie układa swój plan zajęć, chcę sprawdzić, ile punktów ECTS z danych grup przedmiotów już zdobyłem. Dzięki temu w~kolejnym semestrze 
+będę mógł wybrać takie przedmioty, które uzupełnią punkty brakujące do wymaganego limitu.
+\subsection{Druga historyjka}
+Jako studentka informatyki, która zaczyna ostatni semestr studiów, chcę zobaczyć, jakich efektów kształcenia jeszcze nie osiągnęłam i
+upewnić się, że wszystkie wymagania spełnię w ostatnim półroczu i na czas będę mogła skończyć studia.
 \subsection{Trzecia historyjka}
-Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu algorytmy i struktury danych w lutym, prosi zatem o przedłużenie sesji oraz korektę danych. Chcę, aby po zmianie oceny oraz efektów kształcenia w USOSie zauktualizowane zostały dane nt. efektów kształcenia w Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
-
+Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu algorytmy 
+i struktury danych w lutym, prosi zatem o~przedłużenie sesji oraz korektę danych. 
+Chcę, aby po zmianie oceny oraz efektów kształcenia w~USOSie zauktualizowane zostały dane nt. efektów kształcenia w~Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
 
 
 \section{Wymagania funkcjonalne}
 
-\subsection{Pokazanie tablicy efektów użytkownikowy Systemu Zapisów}
-Jest to kluczowa funkcja projektowanego systemu. Po zleceniu systemowi wyświetlenia tablicy efektów użytkownik powienien niezwłocznie zobaczyć:
+\subsection{Pokazanie \textit{Tablicy efektów} użytkownikowy Systemu Zapisów}
+Jest to kluczowa funkcja projektowanego systemu. Po zleceniu systemowi wyświetlenia \textit{Tablicy efektów} użytkownik powienien niezwłocznie zobaczyć:
 \begin{itemize}
 	\item listę osiągniętych efektów kształcenia,
-	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów.
+	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów,
+	\item punkty ECTS zdobyte z: przedmiotów humanistycznych oraz informatycznych, projektów i kursów.
 \end{itemize}
 
+\subsection{Generowanie danych do pliku}
+Drobną, lecz często bardzo przydatną funkcjonalnością będzie możliwość wygenerowania \textit{Tablicy efektów} do pliku w formacie pdf oraz wydrukowania jej.
+Będzie to użyteczne zarówno dla studentów, którzy wolą analizować dane na papierze niż na komputerze, ale także dla pań z dziekanatu, do których przez jakiś czas będą jeszcze przychodzić studenci z prośbą o dostarczenie
+wiarygodnych i kompletnych informacji o osiągniętych efektach.
 
 \subsection{Importowanie danych z USOSa}
 Ręczne wpisywanie danych wszystkich studentów korzystających z Systemu Zapisów byłoby zaprzeczeniem wszystkiego, w co wierzymy. Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOSem.
@@ -93,9 +95,13 @@ Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając pr
 
 \section{Wymagania niefunkcjonalne}
 
-\subsection{Płynność działania} %TODO: jakaś wymierna miara?
-Przez większość czasu z Systemu Zapisów korzysta niewielka ilość studentów, jednak zmienia się to po otwarciu zapisów na dany semestr oraz w trakcie głosowania. W tych okresach Tablica efektów kształcenia będzie szczególnie często użytkowana.
+\subsection{Płynność działania}
+Przez większość czasu z Systemu Zapisów korzysta niewielka liczba studentów, jednak zmienia się to po otwarciu zapisów na dany semestr oraz w trakcie głosowania. W tych okresach Tablica efektów kształcenia będzie szczególnie często użytkowana.
+\\ Aby sprawdzić, czy na pewno program działa płynnie, należy przetestować system wysyłając do niego 600 zapytań w krótkim czasie. System powinien działać w każdym przypadku, nawet gdyby wszyscy studenci chcieli z niego korzystać w tym samym momencie, a teraz 
+na naszej uczelni na kierunku informatyka studiuje 525 osób.
 
-
+\subsection{Przejrzystość}
+Wyświetlane przez nas dane mają studentom przede wszystkim pomóc. Zależy nam na tym, aby były przedstawione w sposób przejrzysty i zrozumiały.
+\\Aby upewnić się, że rzeczywiście tak jest, należy skonsultować ze studentami i~pracownikami dziekanatu proponowany format przedstawianych informacji.
 
 \end{document}
