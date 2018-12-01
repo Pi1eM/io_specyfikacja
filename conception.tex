@@ -28,7 +28,7 @@
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.2}\par}
+	\vspace{1em}{\centering\large{Wersja 0.4}\par}
 
 \end{titlepage}
 
@@ -46,9 +46,11 @@
 			\hline 
 			2018-12-01 & 0.2 & Korekta dokumentu & Agnieszka Dudek \\
 			\hline
-			2018-12-04 & 0.2 & Korekta punktów 4.1 i 4.2 & Agnieszka Dudek \\
+			2018-12-04 & 0.3 & Korekta punktów 4.1 i 4.2 & Agnieszka Dudek \\
 			\hline
-	      \end{tabular}
+			2018-12-05 & 0.4 & Korekta dokumentu & Piotr Kowalczyk \\
+			\hline
+    \end{tabular}
 	\end{center}
 \end{table}	
 
@@ -65,7 +67,7 @@ Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
 
 
 \section{Scenariusze przypadków użycia}
-Dla trzech historyjek użytkownika przedstawionych w dokumencie Specyfikacja wymagań opisujemy dokładne scenariusze dialogu człowieka z komputerem.
+Dla trzech historyjek użytkownika przedstawionych w dokumencie \textit{Specyfikacja wymagań} opisujemy dokładne scenariusze dialogu człowieka z komputerem.
 
 \subsection{Pierwszy scenariusz}
 Po zalogowaniu do Systemu Zapisów widoczny jest przycisk podpisany \textit{Tablica efektów} (dalej zwany przyciskiem). 
@@ -78,20 +80,23 @@ Znajduje się on za przyciskami \textit{Pracownicy} i \textit{Studenci}. Po klik
 Student może skupić uwagę na trzeciej z wymienionych list lub wydrukować wszystkie dane.
 
 \subsection{Drugi scenariusz}
-Analogicznie do pierwszego scenariuszu studentka po kliknięciu przycisku \textit{Tablica efektów} dostaje listy zrealizowanych i niezrealizowanych efektów kształcenia.
-Może przewijać listę efektów kształcenia czekających na zrealizowanie i sprawdzić, czy uda jej się wszystkie wymagania spełnić w kolejnym semestrze.
+Analogicznie do pierwszego scenariuszu po kliknięciu przycisku \textit{Tablica efektów} wyświetlone zostają listy zrealizowanych i niezrealizowanych efektów kształcenia.
+Studentka może przewijać listę efektów kształcenia czekających na zrealizowanie i sprawdzić, czy uda jej się spełnić wszystkie wymagania w kolejnym semestrze.
 
 \subsection{Trzeci scenariusz}
-Zmiana przedmiotu w USOSie powoduje, że w następnej migracji danych aktualizowane są dane w Systemie Zapisów dotyczące efektów kształcenia.
+Zmiana statusu przedmiotu w USOSie powoduje, że podczas następnej migracji danych aktualizowane są dane w Systemie Zapisów dotyczące efektów kształcenia.
 
+
+\afterpage{\null\newpage}
 \newpage
+
 
 \section{Projekty ekranów dla przypadków użycia}
 \subsection{Pierwszy scenariusz}
 \begin{figure}[H]
 	\begin{center}
 		\caption{Projekt przycisku \textit{Tablica efektów}}
-		\includegraphics[scale=0.5]{te.png}
+		\includegraphics[scale=0.45]{te.png}
 	\end{center}
 \end{figure}
 
@@ -121,11 +126,11 @@ Zmiana przedmiotu w USOSie powoduje, że w następnej migracji danych aktualizow
 
 \section{Projekt architektury}
 
-\subsection{Model konceptualny rzeczywistości, której dotyczy nasza~aplikacja}
+\subsection{Model konceptualny rzeczywistości, której dotyczy nasza aplikacja}
 Obiekty świata rzeczywistego:
 \begin{itemize}
  \item student [imię, nazwisko, numer indeksu, tok studiów],
- \item efekt kształcenia [nazwa, tok studiów, zrealizowanie],
+ \item efekt kształcenia [nazwa, tok studiów, status realizacji],
  \item grupa przedmiotów [nazwa, tok studiów, liczba zdobytych punktów].
 \end{itemize}
 Związki binarne o typie asocjacji 1:M :
@@ -134,7 +139,7 @@ Związki binarne o typie asocjacji 1:M :
  \item student zbiera punkty w grupie przedmiotów [obowiązkowe ze strony studenta].
 \end{itemize}
 
-\subsection{Podstawowe elementy aplikacji}
+\subsection{Podstawowe cechy aplikacji}
 \begin{itemize}
  \item aplikacja będzie częścią serwisu System Zapisów,
 \begin{figure}[H]
@@ -156,33 +161,47 @@ Związki binarne o typie asocjacji 1:M :
 	\end{center}
 \end{figure}
 \end{itemize}
-\subsection{Omówienie interfejsów aplikacji z otoczeniem}1111
-Głównym interfejsem aplikacji jest strona Systemu Zapisów. Oprócz tego ważne jest powiązanie z USOSem. Jest także furtka, służąca do ręcznych poprawek w sytuacjach wyjątkowych (takich, które nie są skorelowane ze zmianami w USOSie).
+
+
+\subsection{Omówienie interfejsów systemu z otoczeniem}
+System będzie posiadać trzy interfejsy.
+Głównym interfejsem będzie strona Systemu Zapisów.
+Drugim, równie ważnym, będzie sprzęgnięcie systemu z USOSem.
+Poza tym system musi umożliwić ręczną modyfikację danych w sytuacjach wyjątkowych (np. nieskorelowanych ze zmianami w USOSie).
+
 
 \section{Schemat bazy danych}
-Baza danych składa się z tylu tablic, ile jest toków studiów na kierunku informatyka na naszej uczelni. Kluczami są identyfikatory studentów, a efekty kształcenia kolejnymi polami typu boolean lub integer (nie da się być jednocześnie na dwóch tokach studiów).
+Baza danych składa się z tylu tablic, ile jest toków studiów na kierunku informatyka na naszej uczelni (nie da się być jednocześnie na dwóch tokach studiów).
+Kluczami są identyfikatory studentów, a efekty kształcenia kolejnymi polami typu boolean lub integer.
 
 Baza jest tworzona (za pierwszym razem) i aktualizowana podczas migracji danych z USOSa.
 
+
 \section{Zasady kodowania}
-Podczas kodowania będą obowiązywać zasady z Systemu Zapisów, a przypadki tamże niezdefiniowane rozstrzygane będą zgodnie z normą wypracowaną przez Google\footnote{https://google.github.io/styleguide/jsguide.html}.
+Podczas kodowania będą obowiązywać zasady obowiązujące w Systemie Zapisów, a przypadki niezdefiniowane rozstrzygane będą zgodnie z normą wypracowaną przez Google\footnote{https://google.github.io/styleguide/jsguide.html}.
+
+
+\newpage
+
 
 \section{Ryzyko}
 
 \subsection{Identyfikacja ryzyka}
-Nie musimy się bać, że nasze oprogramowanie przestanie być potrzebne. Nie musimy się bać, że stracimy odbiorców. Ale za to wykonanie projektu może się opóźnić i tego się głównie boimy.
+Nie musimy się bać, że nasze oprogramowanie przestanie być potrzebne. Nie musimy się bać, że stracimy odbiorców. Ale wykonanie projektu może się opóźnić i to jest główne ryzyko.
 Musimy również pokazać naszym odbiorcom, że jesteśmy wiarygodni. Nasze dane od początku muszą być kompletne i prawdziwe, w przeciwnym wypadku stracimy zaufanie studentów.
 
 \subsection{Zasady zarządzania ryzykiem}
-Aby zapewnić kompletność danych, musimy skonsultować się z osobami odpowiedzialnymi za system efektów kształcenia na naszej uczelni oraz pracownikami dziekanatu, którzy odpowiadają
-za aktualizowanie danych. Ważne jest również dogłębne przetestowanie naszego produktu, aby mieć pewność, że wyświetlane dane są zawsze poprawne.
+Aby zapewnić kompletność danych, musimy skonsultować się z osobami odpowiedzialnymi za system efektów kształcenia na naszej uczelni oraz pracownikami dziekanatu, którzy odpowiadają za aktualizowanie danych.
+Ważne jest również dogłębne przetestowanie naszego produktu, aby mieć pewność, że wyświetlane dane są zawsze poprawne.
 
-Żeby zdążyć z projektem do końca semestru letniego musimy trzymać się harmonogramu od początku realizacji projektu. Dodatkowo już na początku możemy skontaktować się z osobami, 
-na których konsultacjach będzie nam zależeć.
+Żeby zdążyć z projektem do końca semestru letniego musimy trzymać się harmonogramu od początku realizacji projektu. 
+Dodatkowo już na początku możemy skontaktować się z osobami, na których konsultacjach będzie nam zależeć.
 
 
 \section{Ocena zgodności wykonanych prac z planami}
-Ostatnim etapem pracy będzie porównanie osiągniętych efektów z planami. Głównym celem naszego projektu jest dostarczanie danych o zrealizowanych efektach kształcenia.
+Ostatnim etapem pracy będzie porównanie osiągniętych efektów z planami.
+Głównym celem naszego projektu jest dostarczanie danych o zrealizowanych efektach kształcenia.
 Dopuszczamy zmianę ostatecznego wyglądu strony oraz podziału informacji na listy, jednak nie możemy zmienić zakresu wyświetlanych danych.
+
 
 \end{document}
