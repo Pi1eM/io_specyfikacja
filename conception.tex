@@ -13,6 +13,8 @@
 \renewcommand{\thefigure}{\textit{\arabic{figure}}}
 \renewcommand*{\tablename}{\textit{Tabela}}
 \renewcommand{\thetable}{\textit{\arabic{figure}}}
+\renewcommand*{\thesection}{\arabic{section}.}
+\renewcommand*{\thesubsection}{\arabic{section}.\arabic{subsection}.}
 
 
 \begin{document}
@@ -26,7 +28,7 @@
 
 	\vspace{4em}{\centering\Large{Koncepcja wykonania systemu}\par}
 
-	\vspace{17em}{\centering\large{Wrocław, \today}\par}
+	\vspace{17em}{\centering\large{Wrocław, 2018-12-05}\par}
 
 	\vspace{1em}{\centering\large{Wersja 0.4}\par}
 
@@ -62,16 +64,16 @@
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
-Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu \textit{Tablica efektów kształcenia}.
+Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu Tablica efektów kształcenia.
 Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
 
 
 \section{Scenariusze przypadków użycia}
-Dla trzech historyjek użytkownika przedstawionych w dokumencie \textit{Specyfikacja wymagań} opisujemy dokładne scenariusze dialogu człowieka z komputerem.
+Dla trzech historyjek użytkownika przedstawionych w dokumencie Specyfikacja wymagań opisujemy dokładne scenariusze dialogu człowieka z komputerem.
 
 \subsection{Pierwszy scenariusz}
-Po zalogowaniu do Systemu Zapisów widoczny jest przycisk podpisany \textit{Tablica efektów} (dalej zwany przyciskiem). 
-Znajduje się on za przyciskami \textit{Pracownicy} i \textit{Studenci}. Po kliknięciu przycisku wyświetla się ekran, na którym znajdują się:
+Po zalogowaniu do Systemu Zapisów widoczny jest przycisk podpisany Tablica efektów (dalej zwany przyciskiem). 
+Znajduje się on za przyciskami \textsf{Pracownicy} i \textsf{Studenci}. Po kliknięciu przycisku wyświetla się ekran, na którym znajdują się:
 \begin{itemize}
 	\item lista dotychczas zrealizowanych efektów kształcenia,
 	\item lista efektów kształcenia czekających na zrealizowanie,
@@ -80,7 +82,7 @@ Znajduje się on za przyciskami \textit{Pracownicy} i \textit{Studenci}. Po klik
 Student może skupić uwagę na trzeciej z wymienionych list lub wydrukować wszystkie dane.
 
 \subsection{Drugi scenariusz}
-Analogicznie do pierwszego scenariuszu po kliknięciu przycisku \textit{Tablica efektów} wyświetlone zostają listy zrealizowanych i niezrealizowanych efektów kształcenia.
+Analogicznie do pierwszego scenariusza po kliknięciu przycisku Tablica efektów wyświetlone zostają listy zrealizowanych i niezrealizowanych efektów kształcenia.
 Studentka może przewijać listę efektów kształcenia czekających na zrealizowanie i sprawdzić, czy uda jej się spełnić wszystkie wymagania w kolejnym semestrze.
 
 \subsection{Trzeci scenariusz}
@@ -95,7 +97,7 @@ Zmiana statusu przedmiotu w USOSie powoduje, że podczas następnej migracji dan
 \subsection{Pierwszy scenariusz}
 \begin{figure}[H]
 	\begin{center}
-		\caption{Projekt przycisku \textit{Tablica efektów}}
+		\caption{Projekt przycisku Tablica efektów}
 		\includegraphics[scale=0.45]{te.png}
 	\end{center}
 \end{figure}

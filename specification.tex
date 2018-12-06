@@ -8,6 +8,8 @@
 
 \renewcommand*{\tablename}{\textit{Tabela}}
 \renewcommand{\thetable}{\textit{\arabic{figure}}}
+\renewcommand*{\thesection}{\arabic{section}.}
+\renewcommand*{\thesubsection}{\arabic{section}.\arabic{subsection}.}
 
 
 \begin{document}
@@ -17,13 +19,13 @@
 
   \vspace{17em}{\centering\large{Agnieszka Dudek, Piotr Kowalczyk}\par}
 
-	\vspace{2em}{\centering\huge{Dokumentacja projektu \textit{Tablica efektów kształcenia}}\par}
+	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
 
 	\vspace{4em}{\centering\Large{Specyfikacja wymagań}\par}
 
-	\vspace{17em}{\centering\large{Wrocław, \today}\par}
+	\vspace{17em}{\centering\large{Wrocław, 2018-12-05}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.2}\par}
+	\vspace{1em}{\centering\large{Wersja 0.3}\par}
 
 \end{titlepage}
 
@@ -41,6 +43,8 @@
 			\hline 
 			2018-11-30 & 0.2 & Korekta dokumentu & Agnieszka Dudek \\
 			\hline
+			2018-12-05 & 0.3 & Korekta dokumentu & Piotr Kowalczyk \\
+			\hline
     \end{tabular}
 	\end{center}
 \end{table}	
@@ -53,7 +57,7 @@
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
-Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu \textit{Tablica efektów kształcenia}.
+Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu Tablica efektów kształcenia.
 Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
 
 
@@ -70,9 +74,9 @@ Chcę, aby po zmianie oceny oraz efektów kształcenia w USOSie zauktualizowane 
 
 \section{Wymagania funkcjonalne}
 
-\subsection{Pokazanie \textit{Tablicy efektów} użytkownikowy Systemu Zapisów}
+\subsection{Pokazanie Tablicy efektów użytkownikowy Systemu Zapisów}
 Jest to kluczowa funkcja projektowanego systemu.
-Po zleceniu systemowi wyświetlenia \textit{Tablicy efektów} użytkownik powienien niezwłocznie zobaczyć:
+Po zleceniu systemowi wyświetlenia Tablicy efektów użytkownik powienien niezwłocznie zobaczyć:
 \begin{itemize}
 	\item listę osiągniętych efektów kształcenia,
 	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów,
@@ -80,19 +84,17 @@ Po zleceniu systemowi wyświetlenia \textit{Tablicy efektów} użytkownik powien
 \end{itemize}
 
 \subsection{Generowanie danych do pliku}
-Drobną, lecz często bardzo przydatną funckją będzie możliwość wygenerowania \textit{Tablicy efektów} do pliku w formacie pdf oraz wydrukowania jej.
+Drobną, lecz często bardzo przydatną funckją będzie możliwość wygenerowania Tablicy efektów do pliku w formacie pdf oraz wydrukowania jej.
 Będzie to użyteczne zarówno dla studentów, którzy wolą analizować dane na papierze niż na komputerze, jak i dla pań z dziekanatu, do których jeszcze przez jakiś czas będą przychodzić studenci z prośbą o dostarczenie wiarygodnych i kompletnych informacji o osiągniętych efektach.
 
 \subsection{Importowanie danych z USOSa}
 Ręczne wpisywanie danych wszystkich studentów korzystających z Systemu Zapisów byłoby zaprzeczeniem wszystkiego, w co wierzymy.
 Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOSem.
 
-
 \subsection{Ręczna modyfikacja danych}
-Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając przedmiot po terminie bądź bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej).
+Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając przedmiot po terminie lub bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej).
 Zdarzają się także błędy nawet w najdoskonalszych systemach informatycznych, a USOSa trudno byłoby zaliczyć do tej grupy.
 Konieczna jest zatem możliwość ręcznej modyfikacji danych, które znajdują się w Systemie Zapisów i dotyczą efektów kształcenia.
-
 
 
 \section{Wymagania niefunkcjonalne}
