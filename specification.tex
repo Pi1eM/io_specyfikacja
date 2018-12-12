@@ -5,6 +5,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{color}
 \usepackage{amsthm}
+\usepackage[labelsep=period]{caption}
 
 \renewcommand*{\tablename}{\textit{Tabela}}
 \renewcommand{\thetable}{\textit{\arabic{figure}}}
@@ -19,13 +20,13 @@
 
   \vspace{17em}{\centering\large{Agnieszka Dudek, Piotr Kowalczyk}\par}
 
-	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
+	\vspace{2em}{\centering\huge{Dokumentacja projektu \textit{Tablica efektów kształcenia}}\par}
 
 	\vspace{4em}{\centering\Large{Specyfikacja wymagań}\par}
 
-	\vspace{17em}{\centering\large{Wrocław, 2018-12-05}\par}
+	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.3}\par}
+	\vspace{1em}{\centering\large{Wersja 0.4}\par}
 
 \end{titlepage}
 
@@ -45,6 +46,8 @@
 			\hline
 			2018-12-05 & 0.3 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline
+			2018-12-12 & 0.4 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline
     \end{tabular}
 	\end{center}
 \end{table}	
@@ -58,7 +61,7 @@
 
 \subsection{Cel dokumentu}
 Niniejszy dokument ma na celu precyzyjne określenie wymagań projektu Tablica efektów kształcenia.
-Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
+Dokument stanowi pierwsze z listopadowej grupy zadań realizowanych w ramach pracowni z inżynierii oprogramowania.
 
 
 \section{Historyjki użytkownika}
@@ -68,32 +71,32 @@ Dzięki temu w kolejnym semestrze będę mógł wybrać takie przedmioty, które
 \subsection{Druga historyjka}
 Jako studentka informatyki, która zaczyna ostatni semestr studiów, chcę zobaczyć, jakich efektów kształcenia jeszcze nie osiągnęłam i upewnić się, że wszystkie wymagania spełnię w ostatnim półroczu i na czas będę mogła skończyć studia.
 \subsection{Trzecia historyjka}
-Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu algorytmy i struktury danych w lutym, prosi zatem o przedłużenie sesji oraz korektę danych. 
-Chcę, aby po zmianie oceny oraz efektów kształcenia w USOSie zauktualizowane zostały dane nt. efektów kształcenia w Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
+Jako osoba zatrudniona w dziekanacie dowiaduję się, że student wypracował zaliczenie z przedmiotu \textit{Algorytmy i struktury danych} w lutym, prosi zatem o przedłużenie sesji oraz korektę danych. 
+Chcę, aby po zmianie oceny oraz efektów kształcenia w USOS zauktualizowane zostały dane dotyczące efektów kształcenia w Systemie Zapisów, aby nie było konieczności ręcznego poprawiania danych.
 
 
 \section{Wymagania funkcjonalne}
 
-\subsection{Pokazanie Tablicy efektów użytkownikowy Systemu Zapisów}
-Jest to kluczowa funkcja projektowanego systemu.
+\subsection{Pokazanie Tablicy efektów użytkownikowi Systemu Zapisów}
+Jest to najważniejsza funkcja projektowanego systemu.
 Po zleceniu systemowi wyświetlenia Tablicy efektów użytkownik powienien niezwłocznie zobaczyć:
 \begin{itemize}
 	\item listę osiągniętych efektów kształcenia,
 	\item listę nieosiągniętych efektów koniecznych do ukończenia aktualnego etapu studiów,
-	\item punkty ECTS zdobyte z przedmiotów humanistycznych oraz informatycznych, projektów i kursów.
+	\item punkty ECTS zdobyte z przedmiotów humanistycznych oraz informatycznych, a także z projektów i kursów.
 \end{itemize}
 
 \subsection{Generowanie danych do pliku}
-Drobną, lecz często bardzo przydatną funckją będzie możliwość wygenerowania Tablicy efektów do pliku w formacie pdf oraz wydrukowania jej.
+Drobną, lecz często bardzo przydatną funkcją będzie możliwość utworzenia Tablicy efektów w pliku w formacie PDF oraz jej wydrukowania.
 Będzie to użyteczne zarówno dla studentów, którzy wolą analizować dane na papierze niż na komputerze, jak i dla pań z dziekanatu, do których jeszcze przez jakiś czas będą przychodzić studenci z prośbą o dostarczenie wiarygodnych i kompletnych informacji o osiągniętych efektach.
 
-\subsection{Importowanie danych z USOSa}
+\subsection{Importowanie danych z USOS} %obsługi studiów
 Ręczne wpisywanie danych wszystkich studentów korzystających z Systemu Zapisów byłoby zaprzeczeniem wszystkiego, w co wierzymy.
-Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOSem.
+Projektowany system musi automatycznie synchronizować dane dotyczące efektów kształcenia studentów z USOS.
 
 \subsection{Ręczna modyfikacja danych}
-Zdarza się, że student osiąga któryś z efektów kształcenia zaliczając przedmiot po terminie lub bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej).
-Zdarzają się także błędy nawet w najdoskonalszych systemach informatycznych, a USOSa trudno byłoby zaliczyć do tej grupy.
+Zdarza się, że student osiąga któryś z efektów kształcenia, zaliczając przedmiot po terminie lub bez uczęszczania na jakikolwiek przedmiot (np. możliwe jest zwolnienie z projektu zespołowego na podstawie pracy zawodowej).
+Zdarzają się także błędy nawet w najdoskonalszych systemach informatycznych, a USOS trudno byłoby zaliczyć do tej grupy.
 Konieczna jest zatem możliwość ręcznej modyfikacji danych, które znajdują się w Systemie Zapisów i dotyczą efektów kształcenia.
 
 
@@ -101,14 +104,15 @@ Konieczna jest zatem możliwość ręcznej modyfikacji danych, które znajdują 
 
 \subsection{Płynność działania}
 Przez większość czasu z Systemu Zapisów korzysta niewielka liczba studentów, jednak zmienia się to po otwarciu zapisów na dany semestr oraz w trakcie głosowania.
-W tych okresach Tablica efektów kształcenia będzie szczególnie często użytkowana.
+W tych okresach \textit{Tablica efektów kształcenia} będzie szczególnie często użytkowana.
 
-Aby sprawdzić, czy system działa płynnie, należy go przetestować, wysyłając do niego 600 zapytań w krótkim czasie.
-System powinien działać w każdym przypadku, nawet gdyby wszyscy studenci chcieli z niego skorzystać w tym samym momencie (aktualnie na naszej uczelni na kierunku informatyka studiuje 525 osób).
+Aby sprawdzić, czy \textit{Tablica efektów kształcenia} na pewno będzie działała płynnie, należy ją przetestować, wysyłając do niej 600 zapytań w ciągu 1 minuty.
+Nasz system powinien działać sprawnie w każdym przypadku, nawet wówczas gdyby wszyscy studenci chcieli z niego skorzystać w tym samym momencie (obecnie w naszej uczelni na kierunku informatyka studiuje 525 osób).
+%uwaga - który system?
 
 \subsection{Przejrzystość}
-Wyświetlane przez nas dane mają studentom przede wszystkim pomóc.
+Wyświetlane dane mają studentom przede wszystkim pomóc.
 Zależy nam na tym, aby były przedstawione w sposób przejrzysty i zrozumiały.
-Aby upewnić się, że rzeczywiście tak jest, należy skonsultować ze studentami i pracownikami dziekanatu proponowany format przedstawianych informacji.
+Aby upewnić się, że rzeczywiście tak będzie, należy skonsultować ze studentami i pracownikami dziekanatu proponowany format przedstawianych informacji.
 
 \end{document}

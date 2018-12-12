@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{afterpage}
+\usepackage[labelsep=period]{caption}
 
 \renewcommand*{\figurename}{\textit{Rysunek}}
 \renewcommand{\thefigure}{\textit{\arabic{figure}}}
@@ -24,13 +25,13 @@
 
   \vspace{17em}{\centering\large{Agnieszka Dudek, Piotr Kowalczyk}\par}
 
-	\vspace{2em}{\centering\huge{Dokumentacja projektu Tablica efektów kształcenia}\par}
+	\vspace{2em}{\centering\huge{Dokumentacja projektu \textit{Tablica efektów kształcenia}}\par}
 
 	\vspace{4em}{\centering\Large{Koncepcja wykonania systemu}\par}
 
-	\vspace{17em}{\centering\large{Wrocław, 2018-12-05}\par}
+	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.4}\par}
+	\vspace{1em}{\centering\large{Wersja 0.5}\par}
 
 \end{titlepage}
 
@@ -52,6 +53,8 @@
 			\hline
 			2018-12-05 & 0.4 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline
+			2018-12-12 & 0.5 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline			
     \end{tabular}
 	\end{center}
 \end{table}	
@@ -65,14 +68,13 @@
 
 \subsection{Cel dokumentu}
 Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu Tablica efektów kształcenia.
-Stworzony jest na potrzeby przedmiotu inżynieria oprogramowania.
-
+Dokument jest drugim z listopadowej grupy zadań realizowanych w ramach pracowni z inżynierii oprogramowania.
 
 \section{Scenariusze przypadków użycia}
-Dla trzech historyjek użytkownika przedstawionych w dokumencie Specyfikacja wymagań opisujemy dokładne scenariusze dialogu człowieka z komputerem.
+Dla trzech historyjek użytkownika przedstawionych w dokumencie \textit{Specyfikacja wymagań} opisujemy dokładne scenariusze dialogu człowieka z komputerem.
 
 \subsection{Pierwszy scenariusz}
-Po zalogowaniu do Systemu Zapisów widoczny jest przycisk podpisany Tablica efektów (dalej zwany przyciskiem). 
+Po otwarciu sesji w Systemie Zapisów widoczny jest \textbf{przycisk} o nazwie Tablica efektów (dalej zwany przyciskiem). 
 Znajduje się on za przyciskami \textsf{Pracownicy} i \textsf{Studenci}. Po kliknięciu przycisku wyświetla się ekran, na którym znajdują się:
 \begin{itemize}
 	\item lista dotychczas zrealizowanych efektów kształcenia,
@@ -93,35 +95,35 @@ Zmiana statusu przedmiotu w USOSie powoduje, że podczas następnej migracji dan
 \newpage
 
 
-\section{Projekty ekranów dla przypadków użycia}
+\section{Projekty ekranów dotyczących przypadków użycia}
 \subsection{Pierwszy scenariusz}
 \begin{figure}[H]
 	\begin{center}
-		\caption{Projekt przycisku Tablica efektów}
 		\includegraphics[scale=0.45]{te.png}
+		\caption{Projekt przycisku Tablica efektów}
 	\end{center}
 \end{figure}
 
 \begin{figure}[H]
 	\begin{center}
-		\caption{Projekt list zrealizowanych efektów}
 		\includegraphics[scale=0.23]{tabl.png}
+		\caption{Projekt list zrealizowanych efektów}
 	\end{center}
 \end{figure}
 
 \subsection{Drugi scenariusz}
 \begin{figure}[H]
 	\begin{center}
-		\caption{Projekt rozwijania poszczególnych list}
 		\includegraphics[scale=0.23]{rozwin.png}
+		\caption{Projekt rozwijania poszczególnych list}
 	\end{center}
 \end{figure}
 
 \subsection{Trzeci scenariusz}
 \begin{figure}[H]
 	\begin{center}
-		\caption{Projekt list w trybie edycji ręcznej}
 		\includegraphics[scale=0.23]{edycja.png}
+		\caption{Projekt list w trybie ręcznego redagowania}
 	\end{center}
 \end{figure}
 
@@ -135,28 +137,28 @@ Obiekty świata rzeczywistego:
  \item efekt kształcenia [nazwa, tok studiów, status realizacji],
  \item grupa przedmiotów [nazwa, tok studiów, liczba zdobytych punktów].
 \end{itemize}
-Związki binarne o typie asocjacji 1:M :
+Związki binarne o typie asocjacji 1:M\,:
 \begin{itemize}
- \item student posiada efekt kształcenia [opcjonalne ze strony studenta],
+ \item student posiada efekt kształcenia [do wyboru ze strony studenta],
  \item student zbiera punkty w grupie przedmiotów [obowiązkowe ze strony studenta].
 \end{itemize}
 
 \subsection{Podstawowe cechy aplikacji}
 \begin{itemize}
- \item aplikacja będzie częścią serwisu System Zapisów,
+ \item aplikacja będzie częścią oprogramowania System Zapisów,
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.3]{syst.png}
 	\end{center}
 \end{figure}
  \item aplikacja będzie używać bazy danych,
- \item do napisania aplikacji będziemy używać zintegrowanego środowiska programistycznego Eclipse,
+ \item aplikację napiszemy z użyciem zintegrowanego środowiska programistycznego Eclipse,
  \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.12]{eclipse.png}
 	\end{center}
 \end{figure}
- \item aby przetestować aplikację skorzystamy z oprogramowania TestRail.
+ \item aby przetestować aplikację, skorzystamy z oprogramowania TestRail.
  \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{testrail.png}
@@ -168,19 +170,19 @@ Związki binarne o typie asocjacji 1:M :
 \subsection{Omówienie interfejsów systemu z otoczeniem}
 System będzie posiadać trzy interfejsy.
 Głównym interfejsem będzie strona Systemu Zapisów.
-Drugim, równie ważnym, będzie sprzęgnięcie systemu z USOSem.
-Poza tym system musi umożliwić ręczną modyfikację danych w sytuacjach wyjątkowych (np. nieskorelowanych ze zmianami w USOSie).
+Drugim, równie ważnym, będzie sprzęgnięcie systemu z USOS.
+Poza tym system musi umożliwić ręczną modyfikację danych w sytuacjach wyjątkowych (np. nieskorelowanych ze zmianami w USOS).
 
 
 \section{Schemat bazy danych}
-Baza danych składa się z tylu tablic, ile jest toków studiów na kierunku informatyka na naszej uczelni (nie da się być jednocześnie na dwóch tokach studiów).
+Baza danych składa się z tylu tablic, ile jest toków studiów na kierunku informatyka na naszej uczelni (nie można realizować jednocześnie dwóch toków studiów).
 Kluczami są identyfikatory studentów, a efekty kształcenia kolejnymi polami typu boolean lub integer.
 
-Baza jest tworzona (za pierwszym razem) i aktualizowana podczas migracji danych z USOSa.
+Baza jest tworzona (za pierwszym razem) i aktualizowana podczas migracji danych z USOS.
 
 
 \section{Zasady kodowania}
-Podczas kodowania będą obowiązywać zasady obowiązujące w Systemie Zapisów, a przypadki niezdefiniowane rozstrzygane będą zgodnie z normą wypracowaną przez Google\footnote{https://google.github.io/styleguide/jsguide.html}.
+Podczas kodowania będą obowiązywać zasady obowiązujące w Systemie Zapisów, a przypadki niezdefiniowane będą rozstrzygane zgodnie z normą wypracowaną przez Google\footnote{Zob. https://google.github.io/styleguide/jsguide.html.}.
 
 
 \newpage
@@ -196,8 +198,8 @@ Musimy również pokazać naszym odbiorcom, że jesteśmy wiarygodni. Nasze dane
 Aby zapewnić kompletność danych, musimy skonsultować się z osobami odpowiedzialnymi za system efektów kształcenia na naszej uczelni oraz pracownikami dziekanatu, którzy odpowiadają za aktualizowanie danych.
 Ważne jest również dogłębne przetestowanie naszego produktu, aby mieć pewność, że wyświetlane dane są zawsze poprawne.
 
-Żeby zdążyć z projektem do końca semestru letniego musimy trzymać się harmonogramu od początku realizacji projektu. 
-Dodatkowo już na początku możemy skontaktować się z osobami, na których konsultacjach będzie nam zależeć.
+Żeby zdążyć z projektem do końca semestru letniego, musimy trzymać się harmonogramu od początku realizacji projektu. 
+Dodatkowo już na początku możemy skontaktować się z osobami, na których konsultacjach będzie nam zależało.
 
 
 \section{Ocena zgodności wykonanych prac z planami}
