@@ -26,7 +26,7 @@
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.2}\par}
+	\vspace{1em}{\centering\large{Wersja 0.3}\par}
 
 \end{titlepage}
 
@@ -43,6 +43,8 @@
 			2018-12-19 & 0.1 & Utworzenie dokumentu & Agnieszka Dudek \\
 			\hline \hline
 			2019-01-04 & 0.2 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline \hline
+			2019-01-08 & 0.3 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline 
     \end{tabular}
 	\end{center}
@@ -104,21 +106,46 @@ Chcę, aby po zmianie oceny oraz efektów kształcenia w USOS zauktualizowane zo
 TODO
 
 \section{Plan beta testowania}
-Przewidujemy dostarczyć projekt na początek semestru zimowego 2019/2020. Aby dobrze przetestować \textit{Tablicę efektów}, udostępnimy program studentom drugiego
-i trzeciego roku oraz pracownikom dziekanatu na okres wakacyjny. Dzięki temu w razie usterek będziemy mieć czas na naprawienie błędów, w tym czasie też studenci nie podejmują żadnych ostatecznych decyzji (np. związanych z głosowaniem, wyborem przedmiotów).
+Przewidujemy dostarczyć projekt na początek semestru zimowego 2019/2020.
+Aby dobrze przetestować \textit{Tablicę efektów}, udostępnimy program studentom drugiego i trzeciego roku oraz pracownikom dziekanatu na okres wakacyjny.
+Dzięki temu w razie usterek będziemy mieć czas na naprawienie błędów, w tym czasie też studenci nie podejmują żadnych ostatecznych decyzji (np. związanych z głosowaniem, wyborem przedmiotów).
 
 \section{Plan zarządzania ryzykiem}
 TODO
 
 \section{Szczegółowe plany}
 \subsection{Plan wykonania produktu}
-TODO
+Na początku nawiązany zostanie kontakt z osobami odpowiedzialnymi za rozwój Systemu Zapisów.
+Po ich akceptacji, omówieniu ich roli w trakcie wykonywania projektu oraz wyznaczeniu programistów do realizacji rozpocznie się proces wytwarzania oprogramowania.
+Będzie on zgodny ze standardem używanym w Systemie Zapisów (zawiera m. in. code review), uzupełnionym przez dodatkowego testera.
+
+Po wytworzeniu produktu nastąpią dwie fazy testów.
+W czasie fazy pierwszej sprawdzona zostanie zgodność produktu z Systemem Zapisów, jego współdziałanie z USOS, a także wydajność i inne wymagania niefunkcjonalne.
+Po potwierdzeniu poprawności działania produktu przez ww. testy, rozpocznie się faza beta testowania (opisana w punkcie 4.).
+W trakcie testowania błędy będą poprawiane zaraz po wykryciu.
+
+Po zakończeniu testów osoby pracujące w dziekanacie zostaną przeszkolone do używania produktu.
+W tym samym czasie produkt będzie wdrażany.
+
 \subsection{Ocena pracochłonności}
 TODO
+
 \subsection{Harmonogram}
-TODO
+Harmonogram jest następujący (wszystkie daty dotyczą roku 2019):
+\begin{itemize}
+ \item 1.02 -- 20.02 --- omówienie projektu z odpowiedzialnymi za System Zapisów,
+ \item 21.02 -- 31.05 --- wytwarzanie oprogramowania,
+ \item 1.06 -- 30.06 --- testy, faza pierwsza,
+ \item 1.07 -- 31.07 --- faza beta testowania,
+ \item 1.08 -- 14.08 --- szkolenia użytkowników i wdrożenie produktu.
+\end{itemize}
 
 \section{Ocena zgodności wykonanych prac z wizją systemu i specyfikacją wymagań}
-TODO
+Zgodnie z głównym założeniem dotyczącym systemu dane wyświetlane studentom muszą być kompletne i przydatne.
+Będzie to oceniane w trakcie beta testów, w trakcie których studenci oraz pracownicy dziekanatu będą zachęcani do wyrażenia swojej opinii na temat systemu.
+
+Wizja wyglądu systemu nie jest formalnie ustalona.
+Dopuszczamy wszelkie zmiany, o ile będą one komponować się wizualnie z istniejącymi już interfejsami Systemu Zapisów.
+
 
 \end{document}
