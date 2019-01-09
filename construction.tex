@@ -26,7 +26,7 @@
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.3}\par}
+	\vspace{1em}{\centering\large{Wersja 0.4}\par}
 
 \end{titlepage}
 
@@ -46,6 +46,9 @@
 			\hline
 			2019-01-08 & 0.3 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline 
+			2019-01-09 & 0.4 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline 
+
     \end{tabular}
 	\end{center}
 \end{table}	
@@ -102,24 +105,24 @@ Chcę, aby po zmianie oceny oraz efektów kształcenia w USOS zaktualizowane zos
  \item w zakładce \textit{Tablica efektów} sprawdzamy, że przedmiot \textit{Algorytmy i struktury danych} już jest w kolumnie przedmiotów zrealizowanych.
 \end{itemize}
 
-\section{Opracowanie pomiarów sprawdzających wymagania niefunkcjonalne zgodnych z normami ISO/IEC 9126 i 25000}
+\section{Opracowanie pomiarów sprawdzających wymagania niefunkcjonalne zgodnych z normami\\ ISO/IEC 9126 i 25000}
 Model jakościowy dostarczony przez standard ISO/IEC 9126-1 definiuje jakość produktu jako zbiór wielu cech, spośród których największy nacisk kładziemy na płynność działania (wydajność), przejrzystość oraz niezawodność.
 
 W celu przetestowania płynności działania produktu wyślemy do niego 600 zapytań w ciągu minuty.
 Odpowiedź powinna trwać nie dłużej niż czterokrotność średniego czasu odpowiedzi produktu (czas ten jest zależny nie tylko od produktu, ale także od prędkości i obciążenia łącza, zatem musi być mierzony bezpośrednio przed testem).
 
-Przejrzystość interfejsu będzie oceniana przez beta testerów.
+Przejrzystość interfejsu będzie oceniana przez testerów beta.
 
 W celu przetestowania niezawodności będziemy zbierać informacje dotyczące poszczególnych zapytań.
 System będzie działał poprawnie, jeśli zwróci nie więcej niż 1 niepoprawną odpowiedź na 100 poprawnych zapytań oraz jeśli nie nastąpi więcej niż 1 krytyczny (wymagający ingerencji administratora w celu dalszego działania) błąd na 10000 zapytań (niekoniecznie poprawnych).
 
-\section{Plan beta testowania}
+\section{Plan testowania beta}
 Przewidujemy dostarczyć projekt na początek semestru zimowego 2019/2020.
 Aby dobrze przetestować \textit{Tablicę efektów}, udostępnimy program studentom drugiego i trzeciego roku oraz pracownikom dziekanatu na okres wakacyjny.
 Dzięki temu w razie usterek będziemy mieć czas na naprawienie błędów.
 Wtedy też studenci nie będą podejmować żadnych ostatecznych decyzji (związanych z głosowaniem, wyborem przedmiotów), zatem będzie to dobry czas na testy.
 
-\section{Plan zarządzania ryzykiem}
+\section{Plan uwzględniania ryzyka}
 Jak wspomniano w dokumencie \textit{Koncepcja wykonania systemu}, największe ryzyko dotyczące produktu to ryzyko opóźnień w harmonogramie.
 Aby temu przeciwdziałać, postaramy się rozłożyć zadania programistyczne i testowe z naciskiem na pierwszą połowę czasu ustalonego w harmonogramie (patrz punkt 6.2.).
 Ponieważ ostateczny termin wdrożenia produktu to połowa września (wtedy zdecydowana większość studentów zacznie interesować się zapisami na kolejny semestr), mamy dodatkowy miesiąc zapasu na ewentualne opóźnienia.
@@ -132,7 +135,7 @@ Będzie on zgodny ze standardem używanym w Systemie Zapisów (zawiera m. in. co
 
 Po wytworzeniu produktu nastąpią dwie fazy testów.
 W czasie fazy pierwszej sprawdzona zostanie zgodność produktu z Systemem Zapisów, jego współdziałanie z USOS, a także wydajność i inne wymagania niefunkcjonalne.
-Po potwierdzeniu poprawności działania produktu przez ww. testy, rozpocznie się faza beta testowania (opisana w punkcie 4.).
+Po potwierdzeniu poprawności działania produktu przez ww. testy, rozpocznie się faza testowania beta (opisana w punkcie 4.).
 W trakcie testowania błędy będą poprawiane zaraz po wykryciu.
 
 Po zakończeniu testów osoby pracujące w dziekanacie zostaną przeszkolone do używania produktu.
@@ -140,6 +143,7 @@ W tym samym czasie produkt będzie wdrażany.
 
 \subsection{Harmonogram i ocena pracochłonności}
 Harmonogram jest następujący (wszystkie daty dotyczą roku 2019):
+\begin{samepage}
 \begin{itemize}
  \item 1.02 -- 20.02 --- omówienie projektu z osobami odpowiedzialnymi za System Zapisów,
  \item 21.02 -- 31.05 --- wytwarzanie oprogramowania,
@@ -147,6 +151,7 @@ Harmonogram jest następujący (wszystkie daty dotyczą roku 2019):
  \item 1.07 -- 31.07 --- faza beta testowania,
  \item 1.08 -- 14.08 --- szkolenia użytkowników i wdrożenie produktu.
 \end{itemize}
+\end{samepage}
 Niezależnie od powyższego harmonogramu, produkt zacznie być używany przez klientów w połowie września (wtedy studenci zaczynają się interesować ofertą zajęć na kolejny semestr).
 Zatem czas od 15.08 do 14.09 jest dodatkowym buforem, który zostanie wykorzystany w razie opóźnień.
 
