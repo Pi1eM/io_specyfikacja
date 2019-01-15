@@ -7,7 +7,6 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{afterpage}
 \usepackage[labelsep=period]{caption}
 
 \renewcommand*{\figurename}{Rysunek}
@@ -31,7 +30,7 @@
 
 	\vspace{17em}{\centering\large{Wrocław, \today}\par}
 
-	\vspace{1em}{\centering\large{Wersja 0.5}\par}
+	\vspace{1em}{\centering\large{Wersja 0.6}\par}
 
 \end{titlepage}
 
@@ -54,6 +53,8 @@
 			2018-12-05 & 0.4 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline
 			2018-12-13 & 0.5 & Korekta dokumentu & Agnieszka Dudek \\
+			\hline
+			2019-01-15 & 0.6 & Korekta dokumentu & Piotr Kowalczyk \\
 			\hline			
     \end{tabular}
 	\end{center}
@@ -67,14 +68,14 @@
 \section{Wprowadzenie}
 
 \subsection{Cel dokumentu}
-Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu Tablica efektów kształcenia.
+Niniejszy dokument ma na celu precyzyjny opis koncepcji wykonania projektu \textit{Tablica efektów kształcenia}.
 Dokument jest drugim z listopadowej grupy zadań realizowanych w ramach pracowni z inżynierii oprogramowania.
 
 \section{Scenariusze przypadków użycia}
 Dla trzech historyjek użytkownika przedstawionych w dokumencie \textit{Specyfikacja wymagań} opisujemy dokładne scenariusze dialogu człowieka z komputerem.
 
 \subsection{Pierwszy scenariusz}
-Po otwarciu sesji w Systemie Zapisów widoczny jest \textbf{przycisk} o nazwie Tablica efektów (dalej zwany przyciskiem). 
+Po otwarciu sesji w Systemie Zapisów widoczny jest \textbf{przycisk} o nazwie \textsf{Tablica efektów} (dalej zwany przyciskiem). 
 Znajduje się on za przyciskami \textsf{Pracownicy} i \textsf{Studenci}. Po kliknięciu przycisku wyświetla się ekran, na którym znajdują się:
 \begin{itemize}
 	\item lista dotychczas zrealizowanych efektów kształcenia,
@@ -84,14 +85,13 @@ Znajduje się on za przyciskami \textsf{Pracownicy} i \textsf{Studenci}. Po klik
 Student może skupić uwagę na trzeciej z wymienionych list lub wydrukować wszystkie dane.
 
 \subsection{Drugi scenariusz}
-Analogicznie do pierwszego scenariusza po kliknięciu przycisku Tablica efektów wyświetlone zostają listy zrealizowanych i niezrealizowanych efektów kształcenia.
+Analogicznie do pierwszego scenariusza po kliknięciu przycisku \textsf{Tablica efektów} wyświetlone zostają listy zrealizowanych i niezrealizowanych efektów kształcenia.
 Studentka może przewijać listę efektów kształcenia czekających na zrealizowanie i sprawdzić, czy uda jej się spełnić wszystkie wymagania w kolejnym semestrze.
 
 \subsection{Trzeci scenariusz}
 Zmiana statusu przedmiotu w USOS powoduje, że podczas następnej migracji danych aktualizowane są dane w Systemie Zapisów dotyczące efektów kształcenia.
 
 
-\afterpage{\null\newpage}
 \newpage
 
 
@@ -144,21 +144,22 @@ Związki binarne o typie asocjacji 1:M\,:
 \end{itemize}
 
 \subsection{Podstawowe cechy aplikacji}
+Dane są następujące założenia dotyczące \textit{Tablicy efektów}:
 \begin{itemize}
- \item aplikacja będzie częścią oprogramowania System Zapisów,
+  \item będzie częścią oprogramowania System Zapisów,
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.3]{syst.png}
 	\end{center}
 \end{figure}
- \item aplikacja będzie używać bazy danych,
- \item aplikację napiszemy z użyciem zintegrowanego środowiska programistycznego Eclipse,
+ \item będzie używać bazy danych,
+ \item zostanie napisana z użyciem zintegrowanego środowiska programistycznego Eclipse,
  \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.12]{eclipse.png}
 	\end{center}
 \end{figure}
- \item aby przetestować aplikację, skorzystamy z oprogramowania TestRail.
+ \item do jej testów zostanie wykorzystane oprogramowanie TestRail.
  \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{testrail.png}
@@ -168,7 +169,7 @@ Związki binarne o typie asocjacji 1:M\,:
 
 
 \subsection{Omówienie interfejsów systemu z otoczeniem}
-System będzie posiadać trzy interfejsy.
+System będzie mieć trzy interfejsy.
 Głównym interfejsem będzie strona Systemu Zapisów.
 Drugim, równie ważnym, będzie sprzęgnięcie systemu z USOS.
 Poza tym system musi umożliwić ręczną modyfikację danych w sytuacjach wyjątkowych (np. nieskorelowanych ze zmianami w USOS).
